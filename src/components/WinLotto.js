@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import LoseModal from "./LoseModal";
 import WinModal from "./WinModal";
 
 const Win = styled.div`
@@ -15,6 +16,7 @@ const Win = styled.div`
 
 export default function WinLotto({ renderValue }) {
   const [isWin, setIsWin] = useState(false);
+  const [isLose, setIsLose] = useState(false);
   const [winInput, setWinInput] = useState([
     { id: 1, value: "" },
     { id: 2, value: "" },
@@ -31,10 +33,24 @@ export default function WinLotto({ renderValue }) {
   };
 
   const winHandler = () => {
-    for (let i = 0; i < winInput.length; i++)
-      if ([renderValue[i].value] == winInput[i].value) {
-        setIsWin(true);
-      }
+    // 하드코딩먼저
+    if (
+      renderValue[0].value === winInput[0].value &&
+      renderValue[1].value === winInput[1].value &&
+      renderValue[2].value === winInput[2].value &&
+      renderValue[3].value === winInput[3].value &&
+      renderValue[4].value === winInput[4].value &&
+      renderValue[5].value === winInput[5].value
+    ) {
+      setIsWin(true);
+    } else {
+      setIsLose(true);
+    }
+
+    // for (let i = 0; i < winInput.length; i++)
+    //   if (renderValue[i].value === winInput[i].value) {
+    //     setIsWin(true);
+    //   }
   };
   //FIXME:
   // 핸들러에 렌더밸류 비교식 (if 문)
@@ -46,7 +62,11 @@ export default function WinLotto({ renderValue }) {
   return (
     <Win>
       <p>로또 당첨 구현</p>
-      {isWin === true ? <WinModal /> : null}
+      {isWin === true ? (
+        <WinModal setIsWin={setIsWin} />
+      ) : isLose === true ? (
+        <LoseModal setIsLose={setIsLose} />
+      ) : null}
       <div className="win-num">
         {winInput.map((e, index) => (
           <div key={e.id}>
@@ -68,3 +88,6 @@ export default function WinLotto({ renderValue }) {
 // FIXME: Input 컴포넌트 와 같은 아이디를 사용하는데
 // 같은 값으로 렌더되지않을까 >> 예상 적중함 야발
 // 인풋 객체를 하나 더 생성해야함
+
+// WinHandler / LoseHandler
+// >> oneClick

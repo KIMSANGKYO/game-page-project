@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const WinAlarm = styled.div`
+const LoseAlarm = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -12,7 +12,7 @@ const WinAlarm = styled.div`
   bottom: 420px;
   border-radius: 20px;
 
-  .win-close {
+  .lose-close {
     display: flex;
     width: 100%;
     justify-content: end;
@@ -22,7 +22,6 @@ const WinAlarm = styled.div`
     border-radius: 20px 20px 0px 0px;
     > button {
       margin-right: 10px;
-      /* border-style: none; */
     }
   }
   p {
@@ -37,17 +36,17 @@ const WinAlarm = styled.div`
   }
 `;
 
-export default function WinModal({ setIsWin }) {
-  const closeHandler = () => {
-    setIsWin(false);
+export default function LoseModal({ setIsLose }) {
+  const loseCloseHandler = () => {
+    setIsLose(false);
   };
 
   return (
-    <WinAlarm>
-      <div className="win-close">
-        <button onClick={closeHandler}>x 닫기</button>
+    <LoseAlarm>
+      <div className="lose-close">
+        <button onClick={loseCloseHandler}>x 닫기</button>
       </div>
-      <p>당첨되셨습니다 !</p>
-    </WinAlarm>
+      <p>꽝입니다 !</p>
+    </LoseAlarm>
   );
 }

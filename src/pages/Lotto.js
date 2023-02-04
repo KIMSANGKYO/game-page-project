@@ -24,6 +24,7 @@ const Lottery = styled.div`
       border-radius: 50px;
       border: 2px solid black;
       font-weight: bold;
+      background-color: white;
     }
   }
   .num-gen {
@@ -96,4 +97,4 @@ export default function Lotto() {
 // 1. 번호 추천 기능 v
 // 2. 이번 주 로또 당첨 번호 입력 v
 // 3. 내가 구입한 로또 번호 입력 v
-// 4. 버튼 누르면 당첨 확인 가능
+// 4. 버튼 누르면 당첨 확인 가능 v

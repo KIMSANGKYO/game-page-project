@@ -21,19 +21,22 @@ const Put = styled.div`
   .render-num {
     display: flex;
     width: 100%;
-    height: 50px;
+    /* height: 50px; */
     justify-content: space-around;
     align-items: center;
     background-color: aliceblue;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     > div {
       text-align: center;
+      line-height: 47px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
       border: 2px solid black;
+      font-weight: bold;
       background-color: white;
-      font-size: 30px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
     }
   }
   > button {
