@@ -7,11 +7,22 @@ const Put = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
+  background-color: rgb(64, 64, 82);
+
+  /* border-top: 2px solid white; */
+
+  > h2 {
+    color: white;
+    width: 90%;
+  }
   input {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin: 20px;
     text-align: center;
+    border-radius: 20%;
+    /* border: 2px solid black; */
+    font-size: 20px;
   }
   .input-num {
     display: flex;
@@ -20,13 +31,16 @@ const Put = styled.div`
   }
   .render-num {
     display: flex;
-    width: 100%;
-    /* height: 50px; */
+    width: 80%;
+    height: 50px;
     justify-content: space-around;
     align-items: center;
-    background-color: aliceblue;
+    background-color: rgb(179, 172, 232);
     padding-top: 15px;
     padding-bottom: 15px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin-bottom: 40px;
 
     > div {
       text-align: center;
@@ -34,7 +48,7 @@ const Put = styled.div`
       width: 50px;
       height: 50px;
       border-radius: 50px;
-      border: 2px solid black;
+      /* border: 2px solid black; */
       font-weight: bold;
       background-color: white;
     }
@@ -43,6 +57,16 @@ const Put = styled.div`
     width: 120px;
     height: 50px;
     margin-bottom: 20px;
+    background-color: rgb(77, 77, 239);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    /* border: 2px solid black; */
+    box-shadow: 7px 6px 15px 1px rgba(0, 0, 0, 0.2);
+  }
+  > button:active {
+    transform: translateY(4px) translateX(2px);
   }
 `;
 export default function Input() {
@@ -70,6 +94,7 @@ export default function Input() {
 
   return (
     <Put>
+      <h2>나의 번호</h2>
       <div className="input-num">
         {inputValue.map((e, index) => (
           <div key={e.id}>
@@ -87,6 +112,7 @@ export default function Input() {
           <div key={e.id}>{e.value}</div>
         ))}
       </div>
+      <h2>이번 주 당첨 번호</h2>
       <WinLotto
         renderValue={renderValue}
         inputValue={inputValue}

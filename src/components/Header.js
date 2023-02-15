@@ -8,7 +8,8 @@ const Head = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   height: 8%;
-  background-color: grey;
+  background-color: rgb(52, 52, 62);
+  /* border-bottom: 2px solid black; */
 
   a {
     display: flex;
@@ -16,10 +17,15 @@ const Head = styled.div`
     justify-content: space-around;
     width: 200px;
     text-decoration: none;
-    color: black;
+    color: white;
   }
   .fa-bars {
     cursor: pointer;
+    color: white;
+  }
+  .fa-gamepad {
+    color: rgb(77, 77, 239);
+    padding-right: 20px;
   }
 `;
 export default function Header({ navHandler }) {
@@ -27,7 +33,7 @@ export default function Header({ navHandler }) {
     <Head>
       <div className="title">
         <Link to="/">
-          <i className="fa-solid fa-gamepad fa-2x"></i>
+          <i className="fa-solid fa-gamepad fa-3x"></i>
           <h2>Toy Game</h2>
         </Link>
       </div>

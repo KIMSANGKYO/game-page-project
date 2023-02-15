@@ -8,20 +8,24 @@ const LoseAlarm = styled.div`
   position: fixed;
   width: 400px;
   height: 200px;
-  background-color: beige;
+  background-color: rgb(68, 68, 82);
   bottom: 420px;
   border-radius: 20px;
+  border: 2px solid black;
+  color: white;
 
   .lose-close {
     display: flex;
     width: 100%;
     justify-content: end;
-    background-color: brown;
+    background-color: rgb(52, 52, 62);
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 20px 20px 0px 0px;
-    > button {
+    border-bottom: 2px solid black;
+    > i {
       margin-right: 10px;
+      cursor: pointer;
     }
   }
   p {
@@ -44,7 +48,8 @@ export default function LoseModal({ setIsLose }) {
   return (
     <LoseAlarm>
       <div className="lose-close">
-        <button onClick={loseCloseHandler}>x 닫기</button>
+        <i onClick={loseCloseHandler} className="fa-solid fa-x fa-2x"></i>
+        {/* <button onClick={loseCloseHandler}>x 닫기</button> */}
       </div>
       <p>꽝입니다 !</p>
     </LoseAlarm>

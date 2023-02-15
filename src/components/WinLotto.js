@@ -12,6 +12,21 @@ const Win = styled.div`
   .win-num {
     display: flex;
   }
+  > button {
+    width: 120px;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: rgb(77, 77, 239);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    /* border: 2px solid black; */
+    box-shadow: 7px 6px 15px 1px rgba(0, 0, 0, 0.2);
+  }
+  > button:active {
+    transform: translateY(4px) translateX(2px);
+  }
 `;
 
 export default function WinLotto({ renderValue }) {
@@ -61,7 +76,6 @@ export default function WinLotto({ renderValue }) {
 
   return (
     <Win>
-      <p>로또 당첨 구현</p>
       {isWin === true ? (
         <WinModal setIsWin={setIsWin} />
       ) : isLose === true ? (

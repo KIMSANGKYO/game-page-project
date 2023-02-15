@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+import Ladder from "./pages/Ladder";
 import Lotto from "./pages/Lotto";
 import Main from "./pages/Main";
 
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route path="/lotto" element={<Lotto />} />
+          <Route path="/ladder" element={<Ladder />} />
         </Routes>
         {isNav === true ? <Nav navHandler={navHandler} /> : null}
         <Footer />

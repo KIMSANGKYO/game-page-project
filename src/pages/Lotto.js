@@ -6,23 +6,33 @@ const Lottery = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   height: 86%;
-
+  background-color: rgb(68, 68, 82);
+  > h1 {
+    color: white;
+    width: 90%;
+    /* margin-left: 20px; */
+  }
   .winNums {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    background-color: aliceblue;
+    width: 80%;
+    height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgb(179, 172, 232);
+    /* border: 2px solid black; */
+    border-radius: 10px;
     > p {
       text-align: center;
       line-height: 47px;
       width: 50px;
       height: 50px;
       border-radius: 50px;
-      border: 2px solid black;
+      /* border: 2px solid black; */
       font-weight: bold;
       background-color: white;
     }
@@ -31,12 +41,19 @@ const Lottery = styled.div`
     cursor: pointer;
     width: 300px;
     height: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 50px;
-    background-color: gray;
+    /* border: 2px solid black; */
+    background-color: rgb(77, 77, 239);
     color: white;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
+    box-shadow: 7px 6px 15px 1px rgba(0, 0, 0, 0.2);
+  }
+  .num-gen:active {
+    transform: translateY(4px) translateX(2px);
   }
 `;
 // 10씩 끊어서 색깔 변동맞추기
@@ -73,14 +90,13 @@ export default function Lotto() {
     <Lottery>
       <h1>로또 추첨기</h1>
       <button className="num-gen" onClick={winHandler}>
-        번호 생성
+        추천 번호 생성
       </button>
       <div className="winNums">
         {winNumbers.map((e) => (
           <p key={winNumbers.indexOf(e)}>{e}</p>
         ))}
       </div>
-      <h2>내가 산 로또 !</h2>
       <Input />
     </Lottery>
   );

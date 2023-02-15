@@ -11,10 +11,9 @@ const Navigate = styled.div`
   right: 0px;
   width: 50vw;
   height: 100vh;
-  border: 3px solid grey;
+  border-left: 2px solid black;
   //FIXME: 테두리수정
-
-  background: black;
+  background-color: rgb(52, 52, 62);
   i {
     cursor: pointer;
     color: white;
@@ -54,6 +53,7 @@ export default function Nav({ navHandler }) {
       <div className="contents">
         <Link to="/">메인으로</Link>
         <Link to="/lotto">로또 추첨</Link>
+        <Link to="/ladder">사다리 타기</Link>
       </div>
     </Navigate>
   );
